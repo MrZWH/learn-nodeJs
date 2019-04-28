@@ -40,7 +40,7 @@
 - 单线程不是单进程
 
 #### NodeJs 工作模型
-![](../images/nodejs工作模型.PNG)
+![](./images/nodejs工作模型.PNG)
 
 #### 常用场景
 - web server
