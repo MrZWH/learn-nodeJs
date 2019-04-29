@@ -192,3 +192,13 @@ handlebarsjs.com
 npm i handlebars
 ```
 读取文件时不要用相对路径，因为相对路径和启动目录有关
+
+`path.extname`获取文件的后缀名。
+
+
+#### gzip deflate 压缩文件流
+Accept-Encoding、Content-Encoding
+使用 nodejs 提供的压缩：
+```js
+const {createGzip, createDeflate} = require('zlib')
+```
