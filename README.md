@@ -138,3 +138,30 @@ nodejs.cn 访问中文文档。
 - createWriteStream
 
 解决回调地狱问题：promisify、async
+
+### 项目初始化
+#### .gitignore 
+- 匹配模式前加 / 代表项目根目录
+- 匹配模式最后加 / 代表是目录
+- 匹配模式前加 ! 代表取反
+- * 代表任意个字符
+- ? 匹配任意一个字符
+- ** 匹配多级目录
+
+`.npmignore`是发布包到npm上时需要忽略的文件  
+`.editorconfig`  
+
+#### ESLint
+eslint.cn/docs/about/
+安装：
+```shell
+npm i -S eslint babel-eslint
+```
+生产 eslint 配置文件：
+```shell
+eslint --init
+```
+使用 precommit git 钩子，代码错误不能提交
+```shell
+npm i pre-commit -S
+```

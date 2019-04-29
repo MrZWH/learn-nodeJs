@@ -1,0 +1,31 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "- Node.js is a Javascript runtime built on Chrome's V8 - Node.js uses an event-driven,non-blocking I/O model",
+  "main": "",
+  "scripts": {
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+  },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrZWH/learn-nodeJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrZWH/learn-nodeJs/issues"
+  },
+  "homepage": "https://github.com/MrZWH/learn-nodeJs#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
+    "pre-commit": "^1.2.2",
+  }
+}
