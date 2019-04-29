@@ -165,3 +165,23 @@ eslint --init
 ```shell
 npm i pre-commit -S
 ```
+`.eslintignore`忽略文件，`.eslintrc.js`配置文件
+
+
+### 案例项目--静态资源服务器
+官方文档：
+nodejs.cn/api
+
+安装命令行输出美化包：
+```shell
+npm i chalk -S
+```
+浏览器接收响应渲染 html 页面设置：
+```js
+  res.setHeader('Content-Type', 'text/html')
+```
+自动重启服务包：
+```
+npm i -g supervisor
+```
+使用`supervisor app.js`启动文件
