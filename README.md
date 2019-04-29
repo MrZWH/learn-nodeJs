@@ -185,3 +185,10 @@ npm i chalk -S
 npm i -g supervisor
 ```
 使用`supervisor app.js`启动文件
+
+#### handlebars 模板引擎
+handlebarsjs.com
+```
+npm i handlebars
+```
+读取文件时不要用相对路径，因为相对路径和启动目录有关
