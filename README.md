@@ -215,3 +215,11 @@ http码 206 表示返回部分内容（Partial Content）。
 ```shell
 curl -r 0-10 -i http://127.0.0.1:9527/LICENSE
 ```
+
+#### 缓存
+缓存header：
+- Expires, Cache-Control
+- If-Modufied-Since / Last-Modified
+- If-None-Match / ETag
+
+在浏览器中使用刷新会向服务器发送请求验证缓存（即使 Cache-Control 设置了过期时间）

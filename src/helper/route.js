@@ -8,6 +8,7 @@ const config = require('../config/defaultConfig.js')
 const mime = require('../helper/mime.js')
 const compress = require('./compress.js')
 const range = require('./range')
+const isFresh = require('./cache.js')
 
 const tplPath = path.join(__dirname, '../template/dir.tpl')
 const source = fs.readFileSync(tplPath)
@@ -21,6 +22,13 @@ module.exports = async function (req, res, filePath) {
       const contentType = mime(filePath)
       res.statusCode = 200
       res.setHeader('Content-Type', contentType)
+
+      if (isFresh(stats, req, res)) {
+        res.statusCode = 304
+        res.end()
+        return
+      }
+
       // fs.readFile(filePath, (err, data) => {
       //   res.end(data)
       // })
@@ -29,7 +37,7 @@ module.exports = async function (req, res, filePath) {
       if (code === 200) {
         rs = fs.createReadStream(filePath)
       } else {
-      res.statusCode = 016
+      res.statusCode = 206
 
         rs = fs.createReadStream(filePath, {start, end})
       }
