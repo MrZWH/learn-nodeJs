@@ -223,3 +223,43 @@ curl -r 0-10 -i http://127.0.0.1:9527/LICENSE
 - If-None-Match / ETag
 
 在浏览器中使用刷新会向服务器发送请求验证缓存（即使 Cache-Control 设置了过期时间）
+
+#### 做成 cli 工具
+安装：
+```
+npm i -g xxx
+```
+使用方法
+```
+xxx # 把当前文件夹作为静态资源服务器根目录
+xxx -p 8080 # 设定端口号
+
+xxx -h localhost # 设置 host 为 localhost
+
+xxx -d /usr # 设置根目录为 /usr
+```
+
+分析命令行参数的npm工具包：yargs、commander
+```shell
+npm i yargs --save
+```
+```shell
+chmod +x bin/anydoor
+```
+
+#### 版本号
+- x.y.z
+- 1.2.* = ~1.2.0
+- 2.x = ^2.0.0
+
+自动打开网页：
+```
+const {exec} = require('child_process')
+```
+
+### 在 npm 上发布包
+```shell
+npm login
+
+npm publish
+```
