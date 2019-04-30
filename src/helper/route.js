@@ -7,6 +7,7 @@ const readdir = promisify(fs.readdir)
 const config = require('../config/defaultConfig.js')
 const mime = require('../helper/mime.js')
 const compress = require('./compress.js')
+const range = require('./range')
 
 const tplPath = path.join(__dirname, '../template/dir.tpl')
 const source = fs.readFileSync(tplPath)
@@ -23,7 +24,15 @@ module.exports = async function (req, res, filePath) {
       // fs.readFile(filePath, (err, data) => {
       //   res.end(data)
       // })
-      let rs = fs.createReadStream(filePath)
+      let rs
+      const {code, start, end} = range(stats.size, req, res)
+      if (code === 200) {
+        rs = fs.createReadStream(filePath)
+      } else {
+      res.statusCode = 016
+
+        rs = fs.createReadStream(filePath, {start, end})
+      }
       if (filePath.match(config.compress)) {
         rs = compress(rs, req, res)
       }

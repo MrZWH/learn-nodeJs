@@ -202,3 +202,16 @@ Accept-Encoding、Content-Encoding
 ```js
 const {createGzip, createDeflate} = require('zlib')
 ```
+
+#### range
+- range：bytes=[start]-[end]
+- Accept-Ranges: bytes
+- Content-Range: bytes start-end/total
+
+http码 206 表示返回部分内容（Partial Content）。  
+416：如果请求中包含了 Range 请求头，并且 Range 中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义 If-Range 请求头，那么服务器就应当返回416状态码。
+
+使用 curl 命令行向服务器发送请求部分文件
+```shell
+curl -r 0-10 -i http://127.0.0.1:9527/LICENSE
+```
