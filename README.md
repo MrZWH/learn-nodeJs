@@ -263,3 +263,35 @@ npm login
 
 npm publish
 ```
+
+### gulp
+中文网：www.gulpjs.com.cn
+- `*` 匹配任意个字符
+- `?` 匹配一个字符
+- `[...]` 匹配范围内字符
+- `!(pattern1|pattern2)` 匹配取反
+- `?(pattern1|pattern2)` 匹配 0 或 1 个
+- `+(pattern1|pattern2)` 匹配 1 或多个
+- `*(a|b|c)` 匹配任意个
+- `@(pattern|pat*|pat?erN) 匹配特定的一个`
+- `**`任意层级匹配
+- gulp.src 获取文件
+- gulp.dest 写文件
+
+#### gulp 用到的一些工具
+- gulp-less
+- del 删除文件
+- gulp-autoprefixer 配置中 browser 采用[browserslist](http://github.com/ai/browserslist#queries)[browserslist]的写法
+- gulp-clean-css css 压缩
+
+#### gulp.watch
+监听文件变化执行任务
+
+### babel
+```shell
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+```
+#### 配合 react
+```shell
+npm install --save-dev @babel/preset-react
+```

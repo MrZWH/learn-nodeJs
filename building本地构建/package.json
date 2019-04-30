@@ -1,0 +1,46 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "- Node.js is a Javascript runtime built on Chrome's V8 - Node.js uses an event-driven,non-blocking I/O model",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "gulp-watch": "gulp watch",
+    "babel": "babel src/script -d build/script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrZWH/learn-nodeJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrZWH/learn-nodeJs/issues"
+  },
+  "homepage": "https://github.com/MrZWH/learn-nodeJs#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^7.1.2",
+    "@babel/plugin-transform-object-assign": "",
+    "@babel/preset-env": "",
+    "@babel/preset-react": "",
+    "css-loader": "^0.28.7",
+    "del": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-less": "^3.3.2",
+    "gulp-scss": "^1.4.0",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.5.6"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
