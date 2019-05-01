@@ -295,3 +295,48 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 ```shell
 npm install --save-dev @babel/preset-react
 ```
+
+### 测试
+- assert 断言
+断言库：  
+chaijs.com  
+```
+npm i chai
+
+```
+
+https://mochajs.org
+```
+npm i -g mocha
+// or
+npm i -D mocha
+```
+- it.only 只执行这一个
+- it.skip 跳过这个
+
+#### 测试 覆盖率 istanbul
+```
+npm i -D istanbul
+```
+```shell
+istanbul cover test.js
+```
+
+#### 持续集成
+是软件开发流程，有两个特性：
+- 频繁地将代码集成到主干
+- 每次集成都通过自动化的构建来验证
+这样做有两个好处：
+- 尽早发现错误
+- 防止分支大幅偏离主干
+egg，github 上面有`build|passing`图标就代表持续集成。  
+github.com/dwyl/repo-badges 图标生成的网站。  
+https://travis-ci.org  
+添加文件`.travis.yml`
+
+生成代码覆盖率：
+https://codecov.io
+
+#### 性能方面的测试
+Benchmark.js https://benchmarkjs.com
+各个浏览器的性能测试：https://jsperf.com
