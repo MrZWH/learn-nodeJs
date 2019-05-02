@@ -1,3 +1,17 @@
+### 主要内容
+- NodeJS 特性 & 开发准备
+- 核心 API
+- 静态资源服务器 & HTTP 协议
+- 发布模块到 npm
+- 本地代码构建、打包
+- API 单元测试 & UI 自动化测试
+- 爬虫实战
+
+### NodeJS 关键技术
+- Stream
+- 动态 Web framework
+- child_process & cluster
+
 ### NodeJs 是什么
 - Node.js is a Javascript runtime built on Chrome's V8
 - Node.js uses an event-driven,non-blocking I/O model
@@ -372,3 +386,9 @@ npm i selenium-webdriver
 ```
 npm i puppeteer
 ```
+
+### 深入学习
+- through2
+- Express、koa、egg
+- SSR & 同构
+- NodeJS 源码
