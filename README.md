@@ -340,3 +340,35 @@ https://codecov.io
 #### 性能方面的测试
 Benchmark.js https://benchmarkjs.com
 各个浏览器的性能测试：https://jsperf.com
+
+### UI 测试常用工具
+#### React 组件 UI 测试官方工具 Jest
+```
+npm i -D jest babel-jest babel-preset-es2015 babel-preset-react react-test-renderer
+```
+dom测试：Enzyme
+
+sinon
+
+#### webdriver
+```
+npm i selenium-webdriver
+```
+在 chrome 用时需要下载 [ChromeDriver-WebDriver for Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
+### 爬虫
+- 按照一定规则自动抓取网络信息的程序
+
+#### 反爬虫
+- User-Agent, Referer, 验证码
+- 单位时间访问次数、访问量
+- 关键信息图片混淆
+- 异步加载
+
+#### cheerio
+可以将拿到的网页输出成能像 jQuery操作的dom
+
+#### puppeteer
+```
+npm i puppeteer
+```
