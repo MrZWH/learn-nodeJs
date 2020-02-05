@@ -1,0 +1,24 @@
+var playAction = process.argv[process.argv.length - 1];
+console.log(playAction)
+
+var random = Math.random() * 3;
+
+if (random < 1) {
+	var computerAction = 'rock';
+} else if (random > 2) {
+	var computerAction = 'scissor';
+} else {
+	var computerAction = 'paper';
+}
+
+if (computerAction == playAction) {
+	console.log('平局')
+} else if (
+	(computerAction === 'rock' && playAction === 'paper') ||
+	(computerAction === 'scissor' && playAction === 'rock') ||
+	(computerAction === 'paper' && playAction === 'scissor')
+) {
+	console.log('you win')
+} else {
+	console.log('you lose!')
+}

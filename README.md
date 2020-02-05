@@ -435,3 +435,44 @@ npm i puppeteer
   - 异步加载
 - 播放页
   - API 服务器
+
+## 什么是技术预研
+
+- 分析要做的需求，找出技术难点。
+- 针对每个技术难点进行攻克。
+
+## BFF 层
+Backend for Frontend。  
+浏览器与后台服务中间的一个中间渲染层。
+
+主要职责：
+
+- 对用户侧提供HTTP服务
+- 使用后端 RPC 服务
+
+## NodeJs 特有变量
+环境变量：
+
+- `__filename`:当前运行脚本所在位置 
+- `__dirname`: 当前运行脚本所在目录
+
+进程对象：process
+process.argv 可以拿到输入的参数。
+
+## NodeJS 实战：剪刀石头布游戏
+
+参考目录：rock-paper-scissors。  
+在命令行中输入：`node index.js rock`
+
+## Node.js 版极客时间网站
+
+- 列表页
+  - 打通前后台
+  - 服务端渲染
+- 详情页
+  - 网页路由
+  - 异步加载
+- 播放页
+  - API 服务器
+
+09
