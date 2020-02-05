@@ -107,7 +107,9 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
   - 用nodejs客户端技术（electron）实现，最大限度复用现有工程。
 
 ## 环境 & 调试
+
 ### 环境
+
 - CommonJS
   - 每个文件是一个模块，有自己的作用域
   - 在模块内部 module 变量代表模块本身
@@ -126,6 +128,7 @@ chalk npm 包可以在命令行输出有颜色的、下划线、阴影
 `npm root -g`看全局安装路径。
 
 ### global
+
 - CommonJS
 - Buffer（二进制数据处理）、process、console
   - process.cwd() 当前命令所执行的路径
@@ -151,6 +154,7 @@ chalk npm 包可以在命令行输出有颜色的、下划线、阴影
 ```
 
 ## NodeJs 基础 API
+
 ### path
 和路径有关的一切  
 nodejs.cn 访问中文文档。  
@@ -167,6 +171,7 @@ nodejs.cn 访问中文文档。
 - 在其他地方和 process.cwd() 一样，相对 node 启动文件夹
 
 ### Buffer
+
 - 用于处理二进制数据流
 -实例类似整数数组，大小固定
 - C++ 代码在 V8 堆外分配物理内存
@@ -180,8 +185,16 @@ nodejs.cn 访问中文文档。
 - buf.indexOf
 - buf.copy
 
-### event
+### events
+
+EventEmitter：
+
+- 观察者模式
+  - addEventListener
+  - removeEventListener
+
 ### fs
+
 高并发的时候用同步函数会挡住其他用户
 - readFile
 - writeFile
