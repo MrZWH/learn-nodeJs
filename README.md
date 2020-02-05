@@ -106,6 +106,15 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
   - 在已有网站的情况下需要新开发客户端应用。
   - 用nodejs客户端技术（electron）实现，最大限度复用现有工程。
 
+## Node.js 的异步
+
+- Node.js 的非阻塞式 I/O
+- Node.js 异步编程 - callback
+- 事件循环
+- 异步编程 —— Promise
+- 异步编程 —— async-await
+[详情](./NodeJS的异步/Node.js的异步.md)
+
 ## 环境 & 调试
 
 ### 环境
@@ -192,6 +201,9 @@ EventEmitter：
 - 观察者模式
   - addEventListener
   - removeEventListener
+- 调用 vs 抛事件
+  - 关键在于“不知道被通知者存在”
+  - 以及“没有人听还能继续下去”
 
 ### fs
 
@@ -514,4 +526,4 @@ process.argv 可以拿到输入的参数。
 - 播放页
   - API 服务器
 
-09
+18
