@@ -1,24 +1,26 @@
 var playAction = process.argv[process.argv.length - 1];
 console.log(playAction)
 
-var random = Math.random() * 3;
+const game = require('./lib.js');
 
-if (random < 1) {
-	var computerAction = 'rock';
-} else if (random > 2) {
-	var computerAction = 'scissor';
-} else {
-	var computerAction = 'paper';
-}
+// const result = game(playAction)
+// console.log('result', result)
 
-if (computerAction == playAction) {
-	console.log('平局')
-} else if (
-	(computerAction === 'rock' && playAction === 'paper') ||
-	(computerAction === 'scissor' && playAction === 'rock') ||
-	(computerAction === 'paper' && playAction === 'scissor')
-) {
-	console.log('you win')
-} else {
-	console.log('you lose!')
-}
+let count = 0;
+
+process.stdin.on('data', e => {
+	const playAction = e.toString().trim()
+	// console.log(playAction)
+
+	const result = game(playAction)
+	console.log(result)
+
+	if (result == -1) {
+		count++;
+	}
+
+	if (count === 3) {
+		console.log('you so good,i don\'t play')
+		process.exit();
+	}
+})

@@ -1,3 +1,5 @@
+# 学习 NodeJS
+
 ## nodejs 遇到的问题
 
 - 线上程序运行不稳定
@@ -40,47 +42,58 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
   - nodejs没有浏览器API，加了许多nodejs api
   - 你在chrome 里写JavaScript控制浏览器，nodejs让你用类似的方式控制整个计算机。
 
-#### 非阻塞 I/O
+### 非阻塞 I/O
+
 - 阻塞： I/O 时进程休眠等待 I/O 完成后进行下一步
 -  I/O 时函数立即返回，进程不等待 I/O 完成
 
-#### 事件驱动
+### 事件驱动
+
 - I/O 等异步操作结束后的通知
 - 观察者模式
 
 ### 为什么偏爱 NodeJs
+
 - 前端职责范围变大，统一开发体验
 - 在处理高并发、 I/O 密集场景性能优势明显
 
-#### CPU 密集 vs I/O 密集
+### CPU 密集 vs I/O 密集
+
 - CPU 密集：压缩、解压、加密、解密
 - I/O 密集：文件操作、网络操作、数据库
 
-#### web 常见场景
+### web 常见场景
+
 - 静态资源读取
 - 数据库操作
 - 渲染页面
 
-#### 高并发应对之道
+### 高并发应对之道
+
 - 增加机器数
 - 增加每台机器的 CPU 数---多核
 
-#### 进程
+### 进程
+
 - 进程：是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位。
 - 多进程：启动多个进程，多个进程可以一块执行多个任务
 
-#### 线程
+### 线程
+
 - 线程：进程内一个相对独立的、可调度的执行单元，与同属一个进程的线程共享进程的资源
 - 多线程：启动一个进程，在一个进程内启动多个线程，这样，多个线程也可以一块执行多个任务
 
-#### NodeJs 的单线程
+### NodeJs 的单线程
+
 - 单线程只是针对主进程，I/O 操作系统底层多线程调度
 - 单线程不是单进程
 
-#### NodeJs 工作模型
+### NodeJs 工作模型
+
 ![](./images/nodejs工作模型.PNG)
 
-#### 常用场景
+### 常用场景
+
 - web server，通常被用来做一个BFF层，即 Backend For Frontend（服务于前端的后端），通俗的说就是专门为前端业务提供数据的后端程序，这类程序的特点是不需要太强大的运算能力，但对程序的灵活性有较高的要求
   - 搭建一个BFF层的好处，1.对业务来说，能让前端有能力自由组装后台数据，这样可以减少大量的业务沟通成本，加快业务的迭代速度。同时前端工程师能自主决定与后端通讯方式，让前端有更多能力着手于web性能优化。
   - 2.对后端和运维来说Nodejs BFF层搭建，绝对不是光靠前端工程师就能完成的事情，在搭建过程中涉及到了RPC调用系统运维等等场景，都需要后端和运维的紧密配合，搭建BFF层除了后续能大幅减少自己在繁重业务中的工作量之外，还可以大大提升自己在架构领域的知识经验。
@@ -93,8 +106,8 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
   - 在已有网站的情况下需要新开发客户端应用。
   - 用nodejs客户端技术（electron）实现，最大限度复用现有工程。
 
-### 环境 & 调试
-#### 环境
+## 环境 & 调试
+### 环境
 - CommonJS
   - 每个文件是一个模块，有自己的作用域
   - 在模块内部 module 变量代表模块本身
@@ -112,7 +125,7 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
 chalk npm 包可以在命令行输出有颜色的、下划线、阴影  
 `npm root -g`看全局安装路径。
 
-#### global
+### global
 - CommonJS
 - Buffer（二进制数据处理）、process、console
   - process.cwd() 当前命令所执行的路径
@@ -137,8 +150,8 @@ chalk npm 包可以在命令行输出有颜色的、下划线、阴影
 }
 ```
 
-### NodeJs 基础 API
-#### path
+## NodeJs 基础 API
+### path
 和路径有关的一切  
 nodejs.cn 访问中文文档。  
 - normalize join resolve
@@ -153,7 +166,7 @@ nodejs.cn 访问中文文档。
 - 在 require 方法中总是相对当前文件所在文件夹
 - 在其他地方和 process.cwd() 一样，相对 node 启动文件夹
 
-#### Buffer
+### Buffer
 - 用于处理二进制数据流
 -实例类似整数数组，大小固定
 - C++ 代码在 V8 堆外分配物理内存
@@ -167,8 +180,8 @@ nodejs.cn 访问中文文档。
 - buf.indexOf
 - buf.copy
 
-#### event
-#### fs
+### event
+### fs
 高并发的时候用同步函数会挡住其他用户
 - readFile
 - writeFile
@@ -185,8 +198,9 @@ nodejs.cn 访问中文文档。
 
 解决回调地狱问题：promisify、async
 
-### 项目初始化
-#### .gitignore 
+## 项目初始化
+### .gitignore 
+
 - 匹配模式前加 / 代表项目根目录
 - 匹配模式最后加 / 代表是目录
 - 匹配模式前加 ! 代表取反
@@ -197,7 +211,8 @@ nodejs.cn 访问中文文档。
 `.npmignore`是发布包到npm上时需要忽略的文件  
 `.editorconfig`  
 
-#### ESLint
+### ESLint
+
 eslint.cn/docs/about/
 安装：
 ```shell
@@ -213,8 +228,8 @@ npm i pre-commit -S
 ```
 `.eslintignore`忽略文件，`.eslintrc.js`配置文件
 
+## 案例项目--静态资源服务器
 
-### 案例项目--静态资源服务器
 官方文档：
 nodejs.cn/api
 
@@ -232,7 +247,8 @@ npm i -g supervisor
 ```
 使用`supervisor app.js`启动文件
 
-#### handlebars 模板引擎
+### handlebars 模板引擎
+
 handlebarsjs.com
 ```
 npm i handlebars
@@ -242,14 +258,16 @@ npm i handlebars
 `path.extname`获取文件的后缀名。
 
 
-#### gzip deflate 压缩文件流
+### gzip deflate 压缩文件流
+
 Accept-Encoding、Content-Encoding
 使用 nodejs 提供的压缩：
 ```js
 const {createGzip, createDeflate} = require('zlib')
 ```
 
-#### range
+### range
+
 - range：bytes=[start]-[end]
 - Accept-Ranges: bytes
 - Content-Range: bytes start-end/total
@@ -262,7 +280,8 @@ http码 206 表示返回部分内容（Partial Content）。
 curl -r 0-10 -i http://127.0.0.1:9527/LICENSE
 ```
 
-#### 缓存
+### 缓存
+
 缓存header：
 - Expires, Cache-Control
 - If-Modufied-Since / Last-Modified
@@ -270,7 +289,8 @@ curl -r 0-10 -i http://127.0.0.1:9527/LICENSE
 
 在浏览器中使用刷新会向服务器发送请求验证缓存（即使 Cache-Control 设置了过期时间）
 
-#### 做成 cli 工具
+### 做成 cli 工具
+
 安装：
 ```
 npm i -g xxx
@@ -293,7 +313,8 @@ npm i yargs --save
 chmod +x bin/anydoor
 ```
 
-#### 版本号
+### 版本号
+
 - x.y.z
 - 1.2.* = ~1.2.0
 - 2.x = ^2.0.0
@@ -304,13 +325,15 @@ const {exec} = require('child_process')
 ```
 
 ### 在 npm 上发布包
+
 ```shell
 npm login
 
 npm publish
 ```
 
-### gulp
+## gulp
+
 中文网：www.gulpjs.com.cn
 - `*` 匹配任意个字符
 - `?` 匹配一个字符
@@ -324,25 +347,30 @@ npm publish
 - gulp.src 获取文件
 - gulp.dest 写文件
 
-#### gulp 用到的一些工具
+### gulp 用到的一些工具
+
 - gulp-less
 - del 删除文件
 - gulp-autoprefixer 配置中 browser 采用[browserslist](http://github.com/ai/browserslist#queries)[browserslist]的写法
 - gulp-clean-css css 压缩
 
-#### gulp.watch
+### gulp.watch
+
 监听文件变化执行任务
 
-### babel
+## babel
+
 ```shell
 npm install --save-dev @babel/core @babel/cli @babel/preset-env
 ```
-#### 配合 react
+### 配合 react
+
 ```shell
 npm install --save-dev @babel/preset-react
 ```
 
-### 测试
+## 测试
+
 - assert 断言
 断言库：  
 chaijs.com  
@@ -360,7 +388,7 @@ npm i -D mocha
 - it.only 只执行这一个
 - it.skip 跳过这个
 
-#### 测试 覆盖率 istanbul
+### 测试 覆盖率 istanbul
 ```
 npm i -D istanbul
 ```
@@ -368,7 +396,8 @@ npm i -D istanbul
 istanbul cover test.js
 ```
 
-#### 持续集成
+### 持续集成
+
 是软件开发流程，有两个特性：
 - 频繁地将代码集成到主干
 - 每次集成都通过自动化的构建来验证
@@ -383,12 +412,14 @@ https://travis-ci.org
 生成代码覆盖率：
 https://codecov.io
 
-#### 性能方面的测试
+### 性能方面的测试
 Benchmark.js https://benchmarkjs.com
 各个浏览器的性能测试：https://jsperf.com
 
-### UI 测试常用工具
-#### React 组件 UI 测试官方工具 Jest
+## UI 测试常用工具
+
+### React 组件 UI 测试官方工具 Jest
+
 ```
 npm i -D jest babel-jest babel-preset-es2015 babel-preset-react react-test-renderer
 ```
@@ -396,45 +427,40 @@ dom测试：Enzyme
 
 sinon
 
-#### webdriver
+### webdriver
+
 ```
 npm i selenium-webdriver
 ```
 在 chrome 用时需要下载 [ChromeDriver-WebDriver for Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
-### 爬虫
+## 爬虫
+
 - 按照一定规则自动抓取网络信息的程序
 
-#### 反爬虫
+### 反爬虫
+
 - User-Agent, Referer, 验证码
 - 单位时间访问次数、访问量
 - 关键信息图片混淆
 - 异步加载
 
-#### cheerio
+### cheerio
+
 可以将拿到的网页输出成能像 jQuery操作的dom
 
-#### puppeteer
+### puppeteer
+
 ```
 npm i puppeteer
 ```
 
-### 深入学习
+## 深入学习
+
 - through2
 - Express、koa、egg
 - SSR & 同构
 - NodeJS 源码
-
-## Node.js 版极客时间网站
-
-- 列表页
-  - 打通前后台
-  - 服务端渲染
-- 详情页
-  - 网页路由
-  - 异步加载
-- 播放页
-  - API 服务器
 
 ## 什么是技术预研
 
