@@ -113,7 +113,25 @@ nodejs这门技术除了JavaScript之外其它地方和浏览器前端技术几�
 - 事件循环
 - 异步编程 —— Promise
 - 异步编程 —— async-await
+
 [详情](./NodeJS的异步/Node.js的异步.md)
+
+## HTTP 服务
+
+- 什么是 HTTP 服务
+- 简单实现 HTTP 服务器
+- express
+- koa
+
+[详情](./HTTP服务/HTTP.md)
+
+## RPC 调用
+
+- 什么是RPC 调用
+- Node.js Buffer 编解码二进制数据包
+- Node.js net 建立多路复用的RPC通道
+
+[详情](./RPC调用/RPC调用.md)
 
 ## 环境 & 调试
 
@@ -526,4 +544,4 @@ process.argv 可以拿到输入的参数。
 - 播放页
   - API 服务器
 
-18
+26
