@@ -52,3 +52,30 @@
 	"query": "mutation {praise(id: 3)}"
 }
 ```
+
+### 列表页需求解构
+
+- 后端需要渲染列表
+  - 首屏加速
+  - SEO
+- 前端也需要渲染列表
+  - 无刷新过滤、排序
+- 前后端同构
+  - 同一个模板/组件，可在浏览器渲染，也可以在 Node.js 渲染。
+
+#### 前后端同构
+
+- ReactDomServer.renderToString()
+- VueServerRenderer.renderToString()
+- React/Vue 同构的最大难题其实是数据部分
+- 同构的关键
+  - 注重职责分离。1.处理数据的代码。2.处理环境的代码。
+
+安装 React 库，以及babel 相关库：
+
+```shell
+npm i react react-dom --register=http://registry.npm.taobao.org
+npm i @babel/register @babel/preset-react @babel/core --register=http://registry.npm.taobao.org
+```
+
+列表页代码：[./列表页/node/index.js](./列表页/node/index.js)

@@ -9,10 +9,13 @@ app.use(
 	static(__dirname + '/source/')
 )
 
+// 提前下载好的 下载页面 html
+const buffer = fs.readFileSync(__dirname + '/source/index.html')
 app.use(
 	mount('/', async (ctx) => {
-		// 提前下载好的 下载页面 html
-		ctx.body = fs.readFileSync(__dirname + '/source/index.html', 'utf-8')
+		ctx.status = 200
+		ctx.type = 'html'
+		ctx.body = buffer
 	})
 )
 

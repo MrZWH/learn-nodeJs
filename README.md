@@ -544,4 +544,42 @@ process.argv 可以拿到输入的参数。
 - 播放页
   - API 服务器
 
-34
+## 性能优化篇
+
+见目录 [./性能优化/](./性能优化/)
+
+## 概念
+
+见目录 [./概念/](./概念/)
+
+## 服务端框架搭建 koaless
+
+参考 `./refactor` 目录下的代码。
+
+## 补充
+
+事件循环：参考 <https://taopoppy.cn/node/one_eventLoop.html>
+
+### 调试 Node.js 源码
+
+### 抽奖代码
+
+```js
+const list = [
+  '张三',
+  '李四'
+]
+
+console.log('恭喜以下几位同学')
+
+for (let i = 0; i < 3; i++) {
+  const random = Math.floor(Math.random() * list.length)
+
+  console.log(list[random])
+
+  list[random] = list[list.length - 1]
+  list.length--;
+}
+```
+
+源码地址：<https://github.com/geektime-geekbang/geek-nodejs>
